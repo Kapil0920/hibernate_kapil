@@ -1,10 +1,21 @@
 package hibernate_kapil.entity;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Kapil_Employee {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String gender;
+	
+	@Column( name="emp_salary")
 	private int salary;
 	
 	public Kapil_Employee() {
@@ -12,9 +23,9 @@ public class Kapil_Employee {
 	}
 	
 	
-	public Kapil_Employee( String name, String gender, int salary) {
+	public Kapil_Employee(String name, String gender, int salary) {
 //		super();
-		
+//		this.id= id;
 		this.name = name;
 		this.gender = gender;
 		this.salary = salary;
